@@ -1,0 +1,28 @@
+<div *ngIf="isShowList">
+  <h1>List Product</h1>
+  <div>
+    <button (click)="showCreateForm(); changStatusShowList()">Create new product</button>
+  </div>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th colspan="2"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{product.id}}</td>
+      <td>{{product.name}}</td>
+      <td>
+        <button (click)="showEditForm(product)">edit</button></td>
+      <td>
+        <button (click)="showDeleteForm(product)">delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<app-product-create *ngIf="isShowCreate" (createEvent)="createProduct($event)"></app-product-create>
+<app-product-delete *ngIf="isShowDelete" [product] = "currentProduct" (deleteEvent)="deleteProduct($event)"></app-product-delete>
+<app-product-edit *ngIf="isShowEdit" [product] = "currentProduct" (editEvent) = "editProduct(products)"></app-product-edit>

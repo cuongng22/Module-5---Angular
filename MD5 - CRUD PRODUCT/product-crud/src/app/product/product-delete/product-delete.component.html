@@ -1,0 +1,11 @@
+<form (ngSubmit)="delete()">
+  <div>
+    <label >id</label>
+    <input type="text" name="id" [(ngModel)]="product.id" disabled>
+  </div>
+  <div>
+    <label >Name</label>
+    <input disabled type="text" name="name" [(ngModel)]="product.name">
+  </div>
+  <button class="btn btn-primary" type="submit">Delete</button>
+</form>

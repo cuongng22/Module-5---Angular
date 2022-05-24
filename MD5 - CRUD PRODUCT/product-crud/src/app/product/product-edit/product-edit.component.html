@@ -1,0 +1,11 @@
+<form (ngSubmit)="edit()">
+  <div>
+    <label >id</label>
+    <input type="text" name="id" [(ngModel)]="product.id" disabled>
+  </div>
+  <div>
+    <label >name</label>
+    <input type="text" name="name" [(ngModel)]="product.name">
+  </div>
+  <button>Edit</button>
+</form>
